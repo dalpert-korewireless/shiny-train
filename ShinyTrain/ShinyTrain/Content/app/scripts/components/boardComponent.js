@@ -7,7 +7,7 @@
 		
 	function boardComponent() {
 		return {
-			templateUrl: '/app/partials/components/board.html',
+			templateUrl: '/Content/app/partials/components/board.html',
 			controller: boardController,
 			bindings: {
 				width: '<',
