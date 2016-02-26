@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Common.Logging;
 using Microsoft.AspNet.SignalR;
 
 namespace ShinyTrain.Hubs
@@ -15,7 +16,9 @@ namespace ShinyTrain.Hubs
         /// <param name="message"></param>
         public void Send(string name, string message)
         {
-            Clients.All.addNewMessageToPage(name, message);
+            LogManager.GetLogger<ShinyHub>().InfoFormat("Sending: {0} | {1}", name, message);
+            var shinyHub = GlobalHost.ConnectionManager.GetHubContext<ShinyHub>();
+            shinyHub.Clients.All.addNewMessageToPage(name, message);
         }
     }
 }
