@@ -25,6 +25,7 @@
     "grunt-coffeelint": "0.0.15",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-less": "^1.2.0",
-    "grunt-contrib-watch": "^0.6.1"
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-include-source": "^0.7.1"
   }
 }
