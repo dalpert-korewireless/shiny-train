@@ -4,7 +4,7 @@ module.exports = (grunt) ->
     pkg: grunt.file.readJSON 'package.json'
     # clean
     clean:
-      default: ['app/index.html','content']
+      default: ['index.html']
     # coffee
     coffee:
       default:

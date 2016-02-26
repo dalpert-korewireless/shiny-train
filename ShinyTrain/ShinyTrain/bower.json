@@ -2,6 +2,9 @@
   "name": "shiny-train",
   "homepage": "https://github.com/dalpert-korewireless/shiny-train",
   "authors": [
+    "Clif Kimball <ckimball@racowireless.com>",
+    "David Alpert <dalpert@korewireless.com>",
+    "Shauna Walters <swalters@korewireless.com>",
     "Trevor J. Schmitz <schmitzt3@gmail.com>"
   ],
   "description": "Basic Twixt Implementation in HTML5",
