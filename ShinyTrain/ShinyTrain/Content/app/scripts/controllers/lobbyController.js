@@ -5,6 +5,6 @@
 		
 	function lobbyController($scope, lobbyFactory) {
 		console.log('hitting lobby');
-		$scope.lobbies = lobbyFactory.get();
+		$scope.lobby = lobbyFactory.get();
 	}
 })()

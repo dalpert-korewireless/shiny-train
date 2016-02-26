@@ -4,12 +4,18 @@
 		.factory('lobbyFactory', ['$http', lobbyFactory])
 		
 	function lobbyFactory($http) {
+		//store games?
 		return {
-			get: getLobby
+			get: getLobby,
+			add: addGameToLobby
 		}
 		
 		function getLobby() {
-			
+			//http get
+		}
+		
+		function addGameToLobby(game) {
+			//http post
 		}
 	}
 })()
