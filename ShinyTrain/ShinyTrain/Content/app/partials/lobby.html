@@ -1,1 +1,15 @@
-<h1>lobby</h1>
+<div class="container">
+	<h1>Lobby</h1>
+	<hr/>
+	<div class="row" ng-repeat="room in lobby.rooms">
+		<div class="panel panel-default">
+  			<div class="panel-body">
+    			{{room}}
+  			</div>
+		</div>
+	</div>
+	<div ng-if="lobby.rooms === undefined || lobby.rooms.length === 0" class="text-center">
+		<p>No games created yet.</p>
+		<h3><a href="" ui-sref="">+ Create Game</a></h1>
+	</div>
+</div>
