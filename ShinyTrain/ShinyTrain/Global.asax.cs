@@ -20,7 +20,6 @@ namespace ShinyTrain
     {
         protected void Application_Start()
         {
-            //RouteTable.Routes.MapHubs();                                // marked Obselete; consider using OWIN alternative
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
@@ -30,7 +29,6 @@ namespace ShinyTrain
 
             var log = LogManager.GetLogger<MvcApplication>();
             log.InfoFormat("Staring up...");
-            Crier.Start();
         }
 
         protected void Application_Error(object sender, EventArgs e)
@@ -38,14 +36,6 @@ namespace ShinyTrain
             var exception = Server.GetLastError();
             var log = LogManager.GetLogger<MvcApplication>();
             log.Error(exception);
-        }
-
-        public override void Dispose()
-        {
-            var log = LogManager.GetLogger<MvcApplication>();
-            log.InfoFormat("Shutting down...");
-            Crier.Stop();
-            base.Dispose();
         }
     }
 }
