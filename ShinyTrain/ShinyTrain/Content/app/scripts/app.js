@@ -6,7 +6,7 @@
 	function appConfig($locationProvider, $stateProvider, $urlRouterProvider) {
 		console.log($stateProvider);
 		$locationProvider.html5Mode(false);
-		$urlRouterProvider.otherwise('/');
+		$urlRouterProvider.otherwise('/lobby');
 		 
 		$stateProvider
 			.state('app', {
