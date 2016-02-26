@@ -16,8 +16,12 @@
     "url": "https://github.com/dalpert-korewireless/shiny-train/issues"
   },
   "homepage": "https://github.com/dalpert-korewireless/shiny-train#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "bower": "^1.7.7",
-    "grunt": "^0.4.5"
+    "coffeelint": "^1.14.2",
+    "grunt": "^0.4.5",
+    "grunt-bower": "^0.21.0",
+    "grunt-coffeelint": "0.0.15"
   }
 }
