@@ -11,7 +11,7 @@ namespace ShinyTrain.Hubs
         {
             LogManager.GetLogger<ShinyHub>().InfoFormat("Player added: {0} ", player.Name);
             var shinyHub = GlobalHost.ConnectionManager.GetHubContext<ShinyHub>();
-            shinyHub.Clients.All.playerAdded(player.AsJSON());
+            shinyHub.Clients.All.playerCreated(player.AsJSON());
         }
 
         public static void GameCreated(TwixTGame game)
