@@ -1,23 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using System.Web.UI.WebControls;
-using System.Web.WebPages;
 using Common.Logging;
+using ShinyTrain.Domain;
+using ShinyTrain.Persistence;
 
 namespace ShinyTrain
 {
-    // Note: For instructions on enabling IIS6 or IIS7 classic mode,
-    // visit http://go.microsoft.com/?LinkId=9394801
-
-    public class MvcApplication : System.Web.HttpApplication
+    public class WebApp : System.Web.HttpApplication
     {
+        private static readonly Lazy<IShinyDataRepository> ShinyDataRepository = new Lazy<IShinyDataRepository>(() =>
+        {
+            LogManager.GetLogger<WebApp>().Info("Creating a new, in-memory data repository.");
+
+            return new InMemoryShinyDataRepository();
+        });
+
+        public static IShinyDataRepository ShinyData
+        {
+            get { return ShinyDataRepository.Value; }
+        }
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -27,14 +32,14 @@ namespace ShinyTrain
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            var log = LogManager.GetLogger<MvcApplication>();
+            var log = LogManager.GetLogger<WebApp>();
             log.InfoFormat("Staring up...");
         }
 
         protected void Application_Error(object sender, EventArgs e)
         {
             var exception = Server.GetLastError();
-            var log = LogManager.GetLogger<MvcApplication>();
+            var log = LogManager.GetLogger<WebApp>();
             log.Error(exception);
         }
     }
