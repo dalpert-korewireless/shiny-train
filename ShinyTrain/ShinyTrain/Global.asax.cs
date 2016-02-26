@@ -16,7 +16,7 @@ namespace ShinyTrain
     {
         protected void Application_Start()
         {
-            RouteTable.Routes.MapHubs();                                // marked Obselete; consider using OWIN alternative
+            //RouteTable.Routes.MapHubs();                                // marked Obselete; consider using OWIN alternative
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);

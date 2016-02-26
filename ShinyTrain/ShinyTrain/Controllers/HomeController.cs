@@ -18,7 +18,7 @@ namespace ShinyTrain.Controllers
 
         public ActionResult PlayerName()
         {
-            return View();
+            return View("PlayerName");
         }
 
     }
