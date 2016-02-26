@@ -237,6 +237,10 @@ _Pvt_Extensions
 # FAKE - F# Make
 .fake/
 
-
+# Project Dependencies
 bower_components/
 node_modules/
+vendor/
+
+# Compiled
+ShinyTrain/ShinyTrain/index.html
