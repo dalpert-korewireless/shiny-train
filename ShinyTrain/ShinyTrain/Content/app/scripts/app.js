@@ -6,7 +6,7 @@
 	function appConfig($locationProvider, $stateProvider, $urlRouterProvider) {
 		console.log($stateProvider);
 		$locationProvider.html5Mode(false);
-		$urlRouterProvider.otherwise('/');
+		$urlRouterProvider.otherwise('/lobby');
 		 
 		$stateProvider
 			.state('app', {
@@ -14,9 +14,10 @@
 				template: '<div ui-view=""></div>',
 				abstract: true
 			})
-			.state('app.game', {
-				url: '/game',
-				templateUrl: '/Content/app/partials/game.html'
-			});
+            .state('app.lobby', {
+                url: '/lobby',
+                templateUrl: '/Content/app/partials/lobby.html',
+                controller: 'lobbyController'
+            });
 	}
 })();
