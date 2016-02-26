@@ -1,0 +1,16 @@
+{
+  "name": "shiny-train",
+  "homepage": "https://github.com/dalpert-korewireless/shiny-train",
+  "authors": [
+    "Trevor J. Schmitz <schmitzt3@gmail.com>"
+  ],
+  "description": "Basic Twixt Implementation in HTML5",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.5.0",
+    "bootstrap": "^3.3.6"
+  }
+}
