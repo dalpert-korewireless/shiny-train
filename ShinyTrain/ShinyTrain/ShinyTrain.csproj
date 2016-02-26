@@ -208,9 +208,7 @@
     <Content Include="index.html" />
     <Content Include="Content\app\partials\components\board.html" />
     <Content Include="Content\app\partials\game.html" />
-    <Content Include="Content\app\scripts\app.js" />
     <Content Include="Content\app\scripts\components\boardComponent.js" />
-    <Content Include="Content\app\style\app.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />

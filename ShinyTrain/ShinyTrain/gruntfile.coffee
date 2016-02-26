@@ -37,6 +37,7 @@ module.exports = (grunt) ->
         cwd: 'content/app/less'
         src: ['**/*.less']
         dest: 'content/app/styles/'
+        ext: '.css'
     # wiredep
     wiredep:
       default:
