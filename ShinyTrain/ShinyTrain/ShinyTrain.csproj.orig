@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -76,7 +77,7 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.4.0-alpha1\lib\net35\NLog.dll</HintPath>
+      <HintPath>..\packages\NLog.4.1.2\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NLogEx, Version=1.0.11.0, Culture=neutral, processorArchitecture=MSIL">
@@ -204,16 +205,18 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Content Include="index.html" />
-=======
-    <Content Include="Content\app\index.html" />
->>>>>>> shauna/master
     <Content Include="Content\app\partials\components\board.html" />
-    <Content Include="Content\app\partials\game.html" />
+<<<<<<< HEAD
+    <Content Include="Content\app\partials\lobby.html" />
     <Content Include="Content\app\scripts\app.js" />
     <Content Include="Content\app\scripts\components\boardComponent.js" />
+    <Content Include="Content\app\scripts\controllers\lobbyController.js" />
+    <Content Include="Content\app\scripts\factories\lobbyFactory.js" />
     <Content Include="Content\app\style\app.css" />
+=======
+    <Content Include="Content\app\partials\game.html" />
+    <Content Include="Content\app\scripts\components\boardComponent.js" />
+>>>>>>> clif/master
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -270,7 +273,10 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="index.tpl.html" />
     <Content Include="package.json" />
+    <Content Include="Content\app\coffee\app.coffee" />
+    <Content Include="Content\app\less\app.less" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -305,8 +311,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+<<<<<<< HEAD
+    <Folder Include="Content\app\less\" />
+=======
     <Folder Include="Content\app\scripts\controllers\" />
     <Folder Include="Content\app\scripts\factories\" />
+>>>>>>> clif/master
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
