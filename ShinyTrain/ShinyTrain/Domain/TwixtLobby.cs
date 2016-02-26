@@ -4,7 +4,7 @@ namespace ShinyTrain.Domain
 {
     public class TwixtLobby
     {
-        public List<Player> Players;
-        public List<TwixTGame> Games;
+        public IList<Player> Players;
+        public IList<TwixTGame> Games;
     }
 }
