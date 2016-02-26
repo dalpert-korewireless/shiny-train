@@ -2,6 +2,9 @@ module.exports = (grunt) ->
   grunt.initConfig
     # read package info
     pkg: grunt.file.readJSON 'package.json'
+    # clean
+    clean:
+      default: ['app/index.html','content']
     # coffee
     coffee:
       default:
@@ -37,6 +40,7 @@ module.exports = (grunt) ->
         src: ['app/index.html']
   
   grunt.loadNpmTasks 'grunt-coffeelint'
+  grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-less'
   grunt.loadNpmTasks 'grunt-include-source'
