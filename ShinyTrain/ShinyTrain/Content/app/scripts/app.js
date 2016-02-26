@@ -13,7 +13,7 @@
       			url: '',
 				template: '<div ui-view=""></div>',
 				abstract: true
-    		})
+			})
 			.state('app.game', {
 				url: '/game',
 				templateUrl: '/Content/app/partials/game.html'
