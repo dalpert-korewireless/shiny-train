@@ -2,44 +2,44 @@ module.exports = (grunt) ->
   grunt.initConfig
     # read package info
     pkg: grunt.file.readJSON 'package.json'
-    # bower
-    bower:
-      default:
-        dest: 'vendor/'
-        css_dest: 'vendor/styles'
-        fonts_dest: 'vendor/fonts'
-        js_dest: 'vendor/scripts'
-        options:
-          keepExpandedHierarchy: no
-          packageSpecific:
-            'bootstrap':
-              files: ['dist/css/bootstrap.css', 'dist/fonts/*', 'dist/js/bootstrap.js']
-    # clean
-    clean: ['compiled','vendor']
     # coffee
     coffee:
       default:
         expand: yes
         cwd: 'app'
         src: ['**/*.coffee']
-        dest: 'compiled/scripts/'
+        dest: 'content/scripts/'
     # coffeelint
     coffeelint:
       options:
         configFile: 'coffeelint.json'
       default: ['app/*.coffee']
+    # include source
+    includeSource:
+      options:
+        templates:
+          html:
+            css: '<link rel="stylesheet" type="text/css" href="{filePath}" />'
+            js: '<script src="{filePath}"></script>'
+      default:
+        files:
+          'app/index.html': 'app/index.tpl.html'
     # less
     less:
       default:
         expand: yes
         cwd: 'app'
         src: ['**/*.less']
-        dest: 'compiled/styles/'
+        dest: 'content/styles/'
+    # wiredep
+    wiredep:
+      default:
+        src: ['app/index.html']
   
-  grunt.loadNpmTasks 'grunt-bower'
   grunt.loadNpmTasks 'grunt-coffeelint'
-  grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-less'
+  grunt.loadNpmTasks 'grunt-include-source'
+  grunt.loadNpmTasks 'grunt-wiredep'
   
-  grunt.registerTask 'default', ['bower','coffee','coffeelint','less']
+  grunt.registerTask 'default', ['coffee','coffeelint','less','includeSource', 'wiredep']

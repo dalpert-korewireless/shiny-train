@@ -241,4 +241,5 @@ node_modules/
 vendor/
 
 # Compiled
-compiled/
+app/index.html
+
