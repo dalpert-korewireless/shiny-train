@@ -243,4 +243,4 @@ node_modules/
 vendor/
 
 # Compiled
-app/index.html
+ShinyTrain/ShinyTrain/index.html

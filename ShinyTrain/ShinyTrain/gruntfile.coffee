@@ -9,7 +9,7 @@ module.exports = (grunt) ->
     coffee:
       default:
         expand: yes
-        cwd: 'app'
+        cwd: 'content/app'
         src: ['**/*.coffee']
         dest: 'content/scripts/'
     # coffeelint
@@ -26,7 +26,7 @@ module.exports = (grunt) ->
             js: '<script src="{filePath}"></script>'
       default:
         files:
-          'app/index.html': 'app/index.tpl.html'
+          'index.html': 'index.tpl.html'
     # less
     less:
       default:
@@ -37,7 +37,7 @@ module.exports = (grunt) ->
     # wiredep
     wiredep:
       default:
-        src: ['app/index.html']
+        src: ['index.html']
   
   grunt.loadNpmTasks 'grunt-coffeelint'
   grunt.loadNpmTasks 'grunt-contrib-clean'
@@ -46,4 +46,4 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-include-source'
   grunt.loadNpmTasks 'grunt-wiredep'
   
-  grunt.registerTask 'default', ['coffee','coffeelint','less','includeSource', 'wiredep']
+  grunt.registerTask 'default', ['coffee','coffeelint','less','includeSource','wiredep']
