@@ -1,6 +1,8 @@
-module.export = (grunt) ->
+module.exports = (grunt) ->
   grunt.initConfig
+    # read package info
     pkg: grunt.file.readJSON 'package.json'
+    # bower
     bower:
       css_dest: 'vendor/style'
       fonts_dest: 'vendor/fonts'
@@ -10,7 +12,9 @@ module.export = (grunt) ->
         packageSpecific:
           'bootstrap':
             files: ['dist/css/bootstrap.css', 'dist/fonts/*', 'dist/js/bootstrap.js']
+    # clean
     clean: ['compiled','vendor']
+    # coffee
     coffee:
       compile:
         expand: yes
