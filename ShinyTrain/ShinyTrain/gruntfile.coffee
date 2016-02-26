@@ -7,16 +7,19 @@ module.exports = (grunt) ->
       default: ['index.html']
     # coffee
     coffee:
+      options:
+        bare: yes
       default:
         expand: yes
-        cwd: 'content/app'
+        cwd: 'content/app/coffee'
         src: ['**/*.coffee']
-        dest: 'content/scripts/'
+        dest: 'content/app/scripts/'
+        ext: '.js'
     # coffeelint
     coffeelint:
       options:
         configFile: 'coffeelint.json'
-      default: ['app/*.coffee']
+      default: ['content/app/coffee/**/*.coffee']
     # include source
     includeSource:
       options:
@@ -31,9 +34,9 @@ module.exports = (grunt) ->
     less:
       default:
         expand: yes
-        cwd: 'app'
+        cwd: 'content/app/less'
         src: ['**/*.less']
-        dest: 'content/styles/'
+        dest: 'content/app/styles/'
     # wiredep
     wiredep:
       default:
