@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Common.Logging;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using ShinyTrain.Domain;
 using ShinyTrain.Persistence;
 
@@ -34,10 +36,6 @@ namespace ShinyTrain
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            // prefer JSON when header does not specify
-            GlobalConfiguration.Configuration.Formatters
-                .JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
 
             var log = LogManager.GetLogger<WebApp>();
             log.InfoFormat("Staring up...");

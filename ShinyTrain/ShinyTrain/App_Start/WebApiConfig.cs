@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Net.Http.Headers;
 using System.Web.Http;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace ShinyTrain
 {
@@ -14,6 +14,16 @@ namespace ShinyTrain
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            var jsonFormatter = config.Formatters.JsonFormatter;
+
+            // prefer JSON when header does not specify
+            jsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+
+            // use indented camel casing
+            var settings = jsonFormatter.SerializerSettings;
+            settings.Formatting = Formatting.Indented;
+            settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }
     }
 }

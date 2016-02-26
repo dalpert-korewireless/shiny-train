@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Security;
+using System.Web.Http;
 using ShinyTrain.Domain;
 
 namespace ShinyTrain.Controllers
@@ -7,7 +8,7 @@ namespace ShinyTrain.Controllers
     {
         //
         // GET: /Lobby/
-        [HttpGet]
+        [System.Web.Http.HttpGet]
         public TwixtLobby Index()
         {
             return new TwixtLobby

@@ -12,28 +12,24 @@ namespace ShinyTrain.Persistence
         private readonly Cache<string, Player> _players = new Cache<string, Player>(TimeSpan.FromHours(1));
         private readonly Cache<string, TwixTGame> _games = new Cache<string, TwixTGame>(TimeSpan.FromHours(1));
 
-        public void RegisterPlayer(string playerName)
+        public void RegisterPlayer(Player player)
         {
-            var player = new Player(playerName);
-
-            if (_players.ContainsKey(playerName))
+            if (_players.ContainsKey(player.Name))
             {
-                throw new PlayerAlreadyExistsException(playerName);
+                throw new PlayerAlreadyExistsException(player.Name);
             }
 
             _players.Add(player.Name, player);
         }
 
-        public void RegisterGame(string gameName)
+        public void CreateGame(TwixTGame game)
         {
-            var game = new TwixTGame(gameName);
-
-            if (_games.ContainsKey(gameName))
+            if (_games.ContainsKey(game.Name))
             {
-                throw new GameAlreadExistsException(gameName);
+                throw new GameAlreadExistsException(game.Name);
             }
 
-            _games.Add(gameName, game);
+            _games.Add(game.Name, game);
         }
 
         public IList<TwixTGame> ListGames()
