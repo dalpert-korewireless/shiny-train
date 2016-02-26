@@ -16,7 +16,7 @@
     		})
 			.state('app.game', {
 				url: '/game',
-				templateUrl: '/app/partials/game.html'
+				templateUrl: '/Content/app/partials/game.html'
 			});
 	}
 })();
