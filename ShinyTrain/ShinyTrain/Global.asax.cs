@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Net.Http.Formatting;
+using System.Net.Http.Headers;
+using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -31,6 +34,10 @@ namespace ShinyTrain
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            // prefer JSON when header does not specify
+            GlobalConfiguration.Configuration.Formatters
+                .JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
 
             var log = LogManager.GetLogger<WebApp>();
             log.InfoFormat("Staring up...");
