@@ -5,7 +5,7 @@
 	
 	function appConfig($locationProvider, $stateProvider, $urlRouterProvider) {
 		console.log($stateProvider);
-		$locationProvider.html5Mode(true);
+		$locationProvider.html5Mode(false);
 		$urlRouterProvider.otherwise('/');
 		 
 		$stateProvider
