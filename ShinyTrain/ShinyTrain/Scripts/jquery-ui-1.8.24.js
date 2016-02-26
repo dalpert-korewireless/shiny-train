@@ -3514,7 +3514,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 			for (var j=0, queriesLength = _queries.length; j < queriesLength; j++) {
 				var item = $(_queries[j]);
 
-				item.data(this.widgetName + '-item', targetData); // Data for target checking (mouse manager)
+				item.data(this.widgetName + '-item', targetData); // ShinyData for target checking (mouse manager)
 
 				items.push({
 					item: item,
